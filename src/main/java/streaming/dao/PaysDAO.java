@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package streaming.service;
+package streaming.dao;
 
-import java.time.LocalDateTime;
-import streaming.entity.Journal;
+import java.util.List;
+import streaming.entity.Pays;
 
 /**
  *
  * @author Administrateur
  */
-public interface JournalService{
-
+public interface PaysDAO {
     
-    public void log(String ville);
+    public void insert(Pays p);
+    public void remove(Pays p);
+    public List<Pays> listerOrdreAlpha(String nom);
 }

@@ -8,27 +8,27 @@ package streaming.aspect;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import streaming.service.JournalService;
 
 /**
  *
- * @author formation
+ * @author Administrateur
  */
-@Component
 @Aspect
+@Component
 public class JournalisationAspect {
+    //but de l'aspect est d'enlever tous les autowired
     
     @Autowired
-    private JournalService service;
+    private JournalService jservice;
     
-    @Before("execution(* streaming.service.*.ajouter(..)) "
-            + "or execution(* streaming.service.*.modifier(..)) "
-            + "or execution(* streaming.service.*.supprimer(..))")
-    public void avant(JoinPoint jp){
+    @Before( "execution(* streaming.service.*.*(..)) "
+            + "and not execution (* streaming.service.JournalService.*(..))")
+    // ici on cible ttes les fonction de la classe filmservice ds service.. (..) -> les deux parametres de la fonction
+    public  void avant(JoinPoint jp){
         
-        service.journaliser( jp.toString() );
+        jservice.log("JPP --> " + jp.toString());
     }
 }

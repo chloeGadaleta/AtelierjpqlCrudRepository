@@ -137,6 +137,8 @@ public class JPQLTest {
 
     @Test
     public void req21() {
+    
+    // 21. Le nombre de films réalisés pour chaque genre ( GROUP BY )
 
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("PU");
         EntityManager em = factory.createEntityManager();

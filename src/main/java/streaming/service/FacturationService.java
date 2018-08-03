@@ -5,37 +5,25 @@
  */
 package streaming.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author formation
+ * @author Administrateur
  */
 @Service
-public class Service2 {
- 
-    public void ajouter(){
-        
-    }
+public class FacturationService {
     
-    public void modifier(){
-        
-    }
+    @Autowired
+    private CompteurService compteurService;
     
-    public void supprimer(){
+    @Autowired
+    private JournalService journalService; 
+            
+    public double calculerCoutEnergetique(String ville){
         
-    }
-    
-    public List lister(){
-        
-        return new ArrayList();
-    }
-    
-    public Object rechercher(long id){
-     
-        return null;
+        journalService.log(ville);
+        return 0.14 * compteurService.listerTotalEnergieDepensee(ville);
     }
 }

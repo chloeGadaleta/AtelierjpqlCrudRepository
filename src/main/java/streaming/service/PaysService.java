@@ -5,15 +5,16 @@
  */
 package streaming.service;
 
-import java.time.LocalDateTime;
-import streaming.entity.Journal;
+import java.util.List;
+import streaming.entity.Pays;
 
 /**
  *
  * @author Administrateur
  */
-public interface JournalService{
-
+public interface PaysService {
     
-    public void log(String ville);
+    public void insert(Pays p);
+    public void remove(Pays p);
+    public List<Pays> listerOrdreAlpha(String nom);
 }

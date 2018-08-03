@@ -5,15 +5,18 @@
  */
 package streaming.service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import static org.eclipse.core.internal.content.ContentMessages.message;
 import streaming.entity.Journal;
 
 /**
  *
  * @author Administrateur
  */
-public interface JournalService{
+public class JournalServiceMockIpml implements JournalService{
 
-    
-    public void log(String ville);
+    @Override
+    public void log(String message) {
+        System.out.println(message + LocalDate.now());
+    }
 }

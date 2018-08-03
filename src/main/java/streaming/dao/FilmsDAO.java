@@ -6,15 +6,18 @@
 package streaming.dao;
 
 import java.util.List;
-import streaming.entity.Personne;
+import streaming.entity.Film;
 
 /**
  *
  * @author Administrateur
  */
-public interface PersonneDAO {
+public interface FilmsDAO {
     
-    public void insert(Personne p);
-    public void remove(Personne p);
-    public List<Personne> listerOrdreAlpha(String nom);
+    public Film findByTitre(String titre);
+    public Film findById(long idFilm);
+    public void update(Film f);
+    public void insert(Film f);
+    public List<Film> list();
+    public void removeAll();
 }

@@ -5,15 +5,12 @@
  */
 package streaming.service;
 
-import java.time.LocalDateTime;
-import streaming.entity.Journal;
-
 /**
- *
+ *Renvoie true si l'action est autorisée pr le role donné sinon renvoie false
+ * 
  * @author Administrateur
  */
-public interface JournalService{
-
+public interface SecurityService {
     
-    public void log(String ville);
+    public void checkisAutorized(String role);
 }

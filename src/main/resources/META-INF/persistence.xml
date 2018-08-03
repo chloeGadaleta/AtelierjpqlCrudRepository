@@ -10,6 +10,10 @@
     <class>streaming.entity.Personne</class>
     <class>streaming.entity.Saison</class>
     <class>streaming.entity.Serie</class>
+    <class>streaming.service.FilmService</class>
+    <class>streaming.entity.JournalEntity</class>
+    <class>streaming.entity.Journal</class>
+    <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.user" value="app"/>
